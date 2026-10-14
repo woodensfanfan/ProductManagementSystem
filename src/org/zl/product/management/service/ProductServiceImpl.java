@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public String createProduct(String name, double price, int quantity) throws DuplicateProductNameException {
         if (repository.findByName(name) != null) {
-            throw new DuplicateProductNameException("UA Product with the name '" + name + "' already exist.");
+            throw new DuplicateProductNameException("Product with the name '" + name + "' already exist.");
         }
 
         String generatedId = generateRandomId();
